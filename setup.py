@@ -2,14 +2,16 @@ from setuptools import setup, find_packages
 
 setup(
     name='fanbookbotapi',
-    version='1.2.5',
+    version='1.2.7',
     packages=find_packages(),
     install_requires=[
         # 这里列出你的依赖包，例如：
         # 'numpy',
         'requests',
         'coloredlogs',
-        'websocket-client'
+        'websocket-client',
+        'pygments',
+        'colorama'
     ],
     author='wangdage',
     author_email='fanbookwdg1122@outlook.com',
