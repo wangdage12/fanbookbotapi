@@ -117,7 +117,10 @@ def bot_websocket(token:str,onOpen, onMessage, onError, onClose, log_level="DEBU
         }).encode('utf-8')).decode('utf-8')
         ws_url = websocket_url+f"?id={user_token}&dId={device_id}&v={version_number}&x-super-properties={super_str}"#准备url
         logger.info("正在建立连接")
-        threading.Thread(target=send_data_thread, daemon=True).start()#启动定时发送心跳包的线程
+        try:
+            threading.Thread(target=send_data_thread, daemon=True).start()#启动定时发送心跳包的线程
+        except:
+            logger.error('无法启动新线程，可能是环境限制')
         # 建立WebSocket连接
         websocket.enableTrace(True,level='INFO')
         ws = websocket.WebSocketApp(ws_url,
