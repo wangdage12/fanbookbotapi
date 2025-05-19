@@ -2,5 +2,5 @@ colorama==0.4.6
 coloredlogs==15.0.1
 Pygments==2.18.0
 Requests==2.32.3
-setuptools==71.0.4
+setuptools==78.1.1
 websocket_client==1.8.0
